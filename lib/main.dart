@@ -159,10 +159,10 @@ class LinearPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
 
-    for(int i=0;i<drawingPoint.length;i++){
-      if(drawingPoint[i]!= null && drawingPoint[i+1]!= null){
+    for(int i=0;i<drawingPoint.length-1;i++){
+      if(drawingPoint[i]!= null&& drawingPoint[i+1]!= null ){
         canvas.drawLine(drawingPoint[i]!.offset,drawingPoint[i+1]!.offset,drawingPoint[i]!.paint);
-      } else if(drawingPoint[i]!= null && drawingPoint[i+1]!= null){
+      } else if(drawingPoint[i]!= null&& drawingPoint[i+1]!= null){
        offsetList.clear();
        offsetList.add(drawingPoint[i]!.offset);
        canvas.drawPoints(PointMode.points, offsetList, drawingPoint[i]!.paint);
